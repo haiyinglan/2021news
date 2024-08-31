@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Text Overlay</title>
+    <style>
+        .image-container {
+            position: relative;
+            width: 500px; /* Adjust as needed */
+        }
+
+        #image {
+            width: 100%;
+            height: auto;
+        }
+
+        .text-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="your-image-url.jpg" alt="Descriptive Alt Text" id="image">
+        <div class="text-overlay" id="textOverlay">Default Text</div>
+    </div>
+    <input type="text" id="userInput" placeholder="Enter your text">
+    <button onclick="updateText()">Update Text</button>
+    <script>
+        function updateText() {
+            var userInput = document.getElementById('userInput').value;
+            var textOverlay = document.getElementById('textOverlay');
+            textOverlay.textContent = userInput; // Update the text
+        }
+    </script>
+</body>
+</html>
